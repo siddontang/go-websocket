@@ -169,7 +169,7 @@ func (c *Conn) readPayloadLen(length byte, buf []byte) (payloadLen uint64, err e
 		if err != nil {
 			return
 		}
-		payloadLen = uint64(binary.BigEndian.Uint16(buf[:8]))
+		payloadLen = uint64(binary.BigEndian.Uint64(buf[:8]))
 	}
 
 	return
